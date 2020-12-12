@@ -1,9 +1,9 @@
-radio.onReceivedNumber(function on_received_number(receivedNumber: number) {
+radio.onReceivedNumber(function (receivedNumber) {
     basic.showString("R")
     serial.writeLine("Acceleration")
     serial.writeValue("z", receivedNumber)
 })
-radio.onReceivedString(function on_received_string(receivedString: string) {
+radio.onReceivedString(function (receivedString) {
     if (receivedString == "North") {
         led.toggle(2, 0)
     } else if (receivedString == "East") {
@@ -21,6 +21,5 @@ radio.onReceivedString(function on_received_string(receivedString: string) {
             . . . . .
             `)
     }
-    
 })
 radio.setGroup(204)
